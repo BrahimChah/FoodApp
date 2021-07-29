@@ -1,0 +1,296 @@
+/***** Mobile first *****/
+
+:root {/* Définition des couleurs, de la police et suppresion de la marge du body */
+    --white: #ffffff;
+    --gray-light: #f5fbfc;
+    --gray-dark: #08090a;
+    --green: #35b8be;
+    --green-dark: #1b9097;
+    --green-light: #f5fbfc;
+    --blue-dark: #546285;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+/**** Partie header ****/
+    
+.hamburger {/* Le hamburger qui apparait lorsqu'on est en mode mobile */
+    display: block;
+    width: 25px;
+    background-color: var(--gray-light);
+    padding: 5%;
+    border-radius: 10px;
+    margin: 2%;
+    color: var(--black);
+}
+
+.hamburger-line, .hamburger-line-end { /* Les lignes du dessin hamburger séparés d'un margin-bottom */
+    border-top-style: solid;
+    margin-bottom: 6px;
+    width: 25px; 
+}
+
+.hamburger-line-end { /* La dernière ligne des hamburger ne doit pas avoir de marge pour respecter la forme carrée */
+    margin-bottom: 0px; 
+    width: 10px;
+}
+
+/***** Barre de navigation ******/
+.header { /* Va placer le hamburger en haut à droite */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-text, .navig { /* Ces classes sont réservés à la version PC, donc on les désactive pour le mobile */
+    display: none;
+}
+
+#logo { /* Logo positionné en haut à gauche */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12%;
+    margin: 4%;
+}
+
+/***** Section 1 et 2 *****/
+
+h1 { /*Titres centrés et une taille sufisante */
+    font-size: 3.5em;
+    text-align: center;
+}
+
+h1 ~ p { /* Mise en forme des textes qui suivent les h1 */
+    color: var(--blue-dark);
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 30px
+}
+
+img { /* Taille des images */
+    width: 80vw;
+}
+
+.green { /* Elements textuels en couleur verte */
+    color: var(--green);
+}
+
+.section, .section3 {/* Le texte des section est centré */
+    text-align: center;
+}
+
+.container {/* Définition des containers */
+    width: 80%;
+    margin: auto;
+}
+
+.container2 { /* Container spécial de la section 3 */
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.bottom-section {/* On aère les section en leur donnant une marge inférieur */
+    margin-bottom: 20%;
+}
+
+.btn { /* Configuration de l'apparence des boutons */
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--green);
+    background-image: url('../images/button_wave.svg');
+    background-size: cover;
+    padding: 5% 8% 5% 8%;
+    border-radius: 6px;
+    transition: 300ms;
+}
+
+.btn:hover { /*animation survol du bouton */
+    transition: 300ms;
+    background-color: var(--green-dark);
+}
+
+.top-btn { /* padding top pour le bouton */
+    padding-bottom: 10%;
+}
+
+.cards-title { /* configuration du titre des carte : gras et centré */
+    text-align: center;
+    font-weight: bolder;
+}
+
+.cards-text { /* configuration des textes des carte : bleu foncé et centré */
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    color: var(--blue-dark);
+    margin-bottom: 30%;
+}
+
+/**** SECTION 3 ****/
+.section3 {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 90%;
+    margin: auto;
+}
+
+.background-clair { /* Fond d'écran de la section 3 */
+        background-color: var(--gray-light);
+    }
+
+/****** Footer *******/
+
+footer {
+    background-color: var(--gray-light);
+}
+
+.container3 {
+    width: 80%;
+    margin: auto;
+}
+
+.footer-up { /* Mise en forme de la partie suppérieur du footer */
+    color: var(--green-dark);
+    font-size: 0.8em;
+    padding-top: 8%;
+    font-weight: bold;
+}
+
+.footer-down { /* Mise en forme de la partie inférieur du footer */
+    display: flex;
+    gap: 20px;
+    transform: translateY(-30%);
+}
+
+.footer-down a { /* Mise en forme de la partie inférieur du footer */
+    font-size: 0.7em;
+    text-decoration: none;
+    color: var(--blue-dark);
+}
+
+@media screen and (min-width : 1024px) {
+/***** Version ordi *****/ 
+    
+/***** Header : partie suppérieure *****/
+    li a { /* Mise en forme de la liste : pas de puces et noir*/
+        text-decoration: none;
+        color: var(--gray-dark);
+    }
+
+    li a:hover {
+        transition: 300ms;
+        color: var(--green-dark);
+    }
+
+    .background-wave{ /*fond du header suppérieur */
+        background-color: var(--green);
+        background-image: url('../images/banner_wave.svg');
+        background-position: center;
+    }
+
+    .navig { /* Mise en forme des liens de la barre de navigation */
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        gap : 30px;
+        font-weight: bold;
+        font-size: 0.9em;
+        align-items: center;
+        padding-top: 6%;
+    }
+    
+    .hamburger { /* Le hamburger disparait en version pc */
+        display: none;
+
+    }
+
+    .header { /* Le header apparait en version PC */
+        display: block;
+    }
+
+    .header-text { /* Mise en forme du texte du header */
+        display: block;
+        text-align: center;
+        color: var(--white);
+        margin: 0;
+        padding: 1%;
+    }
+
+    #logo { /* Mise en forme du logo en version PC */
+        width: 15%;
+        position: unset;
+        margin-left: 0;
+    }
+
+/***** Sections *****/
+    main { /* On éloigne la page principal du header pour aérer */
+        margin-top: 3%;
+    }
+
+    img { /* Taille des images en version PC */
+        width: 30vw
+    }
+
+    .container { /* Configuration du container version PC */
+        width: 70%;
+        margin: auto;
+    }
+
+    .section div h1,  /* Dans les section, les titres et paragraphes sont alignés à gauche */
+    .section div p,
+    .section {
+        text-align: left;
+    }
+
+    .flexible { /* En version PC, les colonne se mettent les unes à côté des autres */
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn { /* configuration de la taille du bouton */
+        padding: 4% 6% 4% 6%;
+    }
+
+    .container2 { /* Container spécial de la section 3, il est plus large */
+        width: 90%;
+        margin: auto;
+    }
+
+    .section3 { /* On aère la section 3 en l'éloignant de la section 2 */
+        padding-top: 10%;
+        width: 100%;
+    }
+
+    .section3 h1,
+    .section3 p {
+        text-align: left;
+    }
+
+    .howitwork { /* On éloigne la phrase how it work des images */
+        padding-bottom: 3%;
+    }
+
+/***** Footer *****/
+    .container3 {
+        padding: 1%;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-up {
+        padding-top: 0%;
+    }
+
+    .footer-down, .footer-up {
+        margin-bottom: 0;
+        transform: unset;
+    }
+}
